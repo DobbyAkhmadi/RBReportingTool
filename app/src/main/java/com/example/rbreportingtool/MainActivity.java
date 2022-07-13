@@ -1,16 +1,16 @@
 package com.example.rbreportingtool;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 
-import com.example.rbreportingtool.Application.Model.RecyclerDataMainMenu;
-import com.example.rbreportingtool.Application.Model.RecyclerDataViewMainMenuAdapter;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.rbreportingtool.Application.Adapter.RecyclerDataViewMainMenuAdapter;
+import com.example.rbreportingtool.Application.Model.DataMainMenuDto;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -28,10 +28,11 @@ public class MainActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).hide();
 
         RecyclerView idMainMenuRecyclerView = findViewById(R.id.idGridMenu);
-        ArrayList<RecyclerDataMainMenu> recyclerMainMenu = new ArrayList<>();
-        recyclerMainMenu.add(new RecyclerDataMainMenu("DSA",R.drawable.ic_gfglogo));
-        recyclerMainMenu.add(new RecyclerDataMainMenu("JAVA",R.drawable.ic_gfglogo));
-        recyclerMainMenu.add(new RecyclerDataMainMenu("C++",R.drawable.ic_gfglogo));
+        ArrayList<DataMainMenuDto> recyclerMainMenu = new ArrayList<>();
+        recyclerMainMenu.add(new DataMainMenuDto("DSA",R.drawable.ic_menu));
+        recyclerMainMenu.add(new DataMainMenuDto("JAVA",R.drawable.ic_menu));
+        recyclerMainMenu.add(new DataMainMenuDto("C++",R.drawable.ic_menu));
+        recyclerMainMenu.add(new DataMainMenuDto("C++",R.drawable.ic_menu));
         RecyclerDataViewMainMenuAdapter adapterMain = new RecyclerDataViewMainMenuAdapter(recyclerMainMenu);
         GridLayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 4);
         idMainMenuRecyclerView.setLayoutManager(layoutManager);

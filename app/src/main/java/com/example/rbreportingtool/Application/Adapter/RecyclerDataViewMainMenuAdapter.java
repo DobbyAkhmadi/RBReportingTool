@@ -1,4 +1,4 @@
-package com.example.rbreportingtool.Application.Model;
+package com.example.rbreportingtool.Application.Adapter;
 
 import android.content.Context;
 import android.os.CountDownTimer;
@@ -12,14 +12,15 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.rbreportingtool.R;
+import com.example.rbreportingtool.Application.Model.DataMainMenuDto;
 
 import java.util.ArrayList;
 
 public class RecyclerDataViewMainMenuAdapter extends RecyclerView.Adapter<RecyclerDataViewMainMenuAdapter.RecyclerViewHolder> {
 
-    private final ArrayList<RecyclerDataMainMenu> dataMenuArrayList;
+    private final ArrayList<DataMainMenuDto> dataMenuArrayList;
 
-    public RecyclerDataViewMainMenuAdapter(ArrayList<RecyclerDataMainMenu> recyclerDataArrayList) {
+    public RecyclerDataViewMainMenuAdapter(ArrayList<DataMainMenuDto> recyclerDataArrayList) {
         this.dataMenuArrayList = recyclerDataArrayList;
     }
 
@@ -34,8 +35,8 @@ public class RecyclerDataViewMainMenuAdapter extends RecyclerView.Adapter<Recycl
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewHolder holder, int position) {
         // Set the data to textview and imageview.
-        RecyclerDataMainMenu recyclerData = dataMenuArrayList.get(position);
-        holder.idText.setText(recyclerData.getTitle());
+        DataMainMenuDto recyclerData = dataMenuArrayList.get(position);
+      //  holder.idText.setText(recyclerData.getTitle());
         holder.idImage.setImageResource(recyclerData.getImageId());
         holder.idImage.setOnClickListener(v -> {
             Context context = v.getContext();
@@ -58,13 +59,12 @@ public class RecyclerDataViewMainMenuAdapter extends RecyclerView.Adapter<Recycl
 
         // private final TextView idText;
         private final ImageView idImage;
-        private final TextView idText;
-        private CountDownTimer timer;
+      //  private final TextView idText;
 
         public RecyclerViewHolder(@NonNull View itemView) {
             super(itemView);
             idImage = itemView.findViewById(R.id.idImage);
-            idText = itemView.findViewById(R.id.idText);
+        //    idText = itemView.findViewById(R.id.idText);
         }
 
     }

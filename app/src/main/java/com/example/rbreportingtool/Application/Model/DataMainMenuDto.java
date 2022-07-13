@@ -1,6 +1,6 @@
 package com.example.rbreportingtool.Application.Model;
 
-public class RecyclerDataMainMenu {
+public class DataMainMenuDto {
     public String getTitle() {
         return title;
     }
@@ -20,7 +20,7 @@ public class RecyclerDataMainMenu {
         this.imageId = imageId;
     }
 
-    public RecyclerDataMainMenu(String title, int imageId) {
+    public DataMainMenuDto(String title, int imageId) {
         this.imageId = imageId;
         this.title = title;
     }
